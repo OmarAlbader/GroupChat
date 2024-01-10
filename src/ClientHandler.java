@@ -89,14 +89,8 @@ public class ClientHandler implements Runnable{
 
         while(socket.isConnected()) {
             try {
-                messageFromClient = bufferedReader.readLine();
-
-                //ensure messages are not empty
-                while (messageFromClient.isEmpty()) {
-                    messageFromClient = bufferedReader.readLine();
-                }
-
-                System.out.println("{" + messageFromClient + "} received from: [" + clientUsername + "]");
+          FKEDDDDDDD THEE COOOOODE
+                ved from: [" + clientUsername + "]");
 
                 System.out.println("Broadcasting {" + messageFromClient + "}...");
                 broadcastMessage(clientUsername + ": " + messageFromClient);
