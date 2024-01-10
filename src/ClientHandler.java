@@ -32,7 +32,7 @@ public class ClientHandler implements Runnable{
 
             // ensuring the first client entering the chat haven't empty name
             if (names.isEmpty()) {
-                while (clientUsername.equals("")) {
+                while (clientUsername.isEmpty()) {
                     bufferedWriter.write("Username can't be empty. Try Again");
                     bufferedWriter.newLine();
                     bufferedWriter.flush();
@@ -47,9 +47,9 @@ public class ClientHandler implements Runnable{
 
             // ensuring each client has distinct name and no one have empty name
             else {
-                while (names.contains(this.clientUsername) || clientUsername.equals("")) {
+                while (names.contains(this.clientUsername) || clientUsername.isEmpty()) {
                     // if username is empty write error message to client
-                    if (clientUsername.equals("")) {
+                    if (clientUsername.isEmpty()) {
                         bufferedWriter.write("Username can't be empty. Try Again");
                         bufferedWriter.newLine();
                         bufferedWriter.flush();
@@ -92,7 +92,7 @@ public class ClientHandler implements Runnable{
                 messageFromClient = bufferedReader.readLine();
 
                 //ensure messages are not empty
-                while (messageFromClient.equals("")) {
+                while (messageFromClient.isEmpty()) {
                     messageFromClient = bufferedReader.readLine();
                 }
 
